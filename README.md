@@ -6,4 +6,4 @@ This repository houses a collection of backend modules and utilities both in pyt
 
 The following folders will hold different concepts on the above:
 
-	- [0x00-pagination](0x00-pagination)
+[0x00-pagination](0x00-pagination)
