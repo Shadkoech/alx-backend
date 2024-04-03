@@ -28,7 +28,6 @@ class FIFOCache(BaseCaching):
         else:
             if len(self.cache_data) >= self.MAX_ITEMS:
                 # FIFO eviction: Remove the first item added to cache
-                # first_key = next(iter(self.cache_data))
                 first_key = list(self.cache_data.keys())[0]
                 del self.cache_data[first_key]
                 print("DISCARD: {}". format(first_key))
