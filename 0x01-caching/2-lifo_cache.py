@@ -1,38 +1,36 @@
 #!/usr/bin/env python3
 """
-Module that orchestrates FIFO caching strategy"""
+Module that orchestrates LIFO caching strategy"""
 
 from base_caching import BaseCaching
 
 
-class FIFOCache(BaseCaching):
+class LIFOCache(BaseCaching):
     """Caching system that inherits from BaseCaching
-    It applies the First-In, First-Out algorith"""
+    It applies the Last-In, First-Out algorithm"""
 
     def __init__(self):
-        """Initializing the FIFO instance"""
+        """Initializing the LIFO instance"""
         super().__init__()
 
     def put(self, key, item):
-        """Method adding an item to cache dictionary using FIFO replacement
+        """Method adding an item to cache dictionary using LIFO replacement
         Args:
             Key: The key to add the item with
             item: The item to add to the cache
         Note:
             If key or item is None, the method will pass
-            If items exceed BaseCaching.MAX_ITEMS, the first item
-            added to the cache is discarded FIFO"""
+            If items exceed BaseCaching.MAX_ITEMS, the last item
+            added to the cache is discarded (LIFO)"""
 
         if key is None or item is None:
             pass
         else:
             if len(self.cache_data) >= self.MAX_ITEMS:
-                # FIFO eviction: Remove the first item added to cache
-                # first_key = next(iter(self.cache_data))
-                first_key = list(self.cache_data.keys())[0]
-                del self.cache_data[first_key]
-                print("DISCARD: {}". format(first_key))
-
+                # LIFO eviction: Remove the last item added to the cache
+                last_key = list(self.cache_data.keys())[-1]
+                del self.cache_data[last_key]
+                print("DISCARD: {}". format(last_key))
             self.cache_data[key] = item
 
     def get(self, key):
