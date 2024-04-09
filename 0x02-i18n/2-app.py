@@ -23,7 +23,7 @@ app.config.from_object('1-app.Config')
 @app.route('/', methods=['GET'], strict_slashes=False)
 def index():
     """Method rendering index.html template"""
-    return render_template('2-index.html')
+    return render_template('1-index.html')
 
 
 @babel.localeselector
@@ -33,4 +33,4 @@ def get_locate() -> str:
 
 
 if __name__ == '__main__':
-    app.run(port="5000", host="0.0.0.0", debug=True)
+    app.run(port="5000", host="0.0.0.0")
