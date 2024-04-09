@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Module that sets up a Flask-Babel extension
-Includes the get_locale function"""
-
+"""Module that sets up a Flask-Babel extension"""
 from flask_babel import Babel
 from flask import Flask, render_template
 
@@ -11,9 +9,9 @@ babel = Babel(app)
 
 class Config:
     """Configuration class for Flask app"""
-    LANGUAGES = ["en", "fr"]
-    BABEL_DEFAULT_LOCALE = "en"
-    BABEL_DEFAULT_TIMEZONE = "UTC"
+    LANGUAGES = ['en', 'fr']
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 # Set Babel's values using Config class to the flask app
