@@ -17,7 +17,7 @@ class Config:
 
 
 # Set Babel's values using Config class to the flask app
-app.config.from_object(Config)
+app.config.from_object(1-app.Config)
 
 
 @app.route('/', methods=['GET'], strict_slashes=False)
