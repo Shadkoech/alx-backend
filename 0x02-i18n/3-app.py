@@ -20,7 +20,7 @@ class Config:
 app.config.from_object(Config)
 
 
-@app.route('/', methods=['GET'], strict_slashes=False)
+@app.route('/')
 def index():
     """Method rendering index.html template"""
     return render_template('2-index.html')
