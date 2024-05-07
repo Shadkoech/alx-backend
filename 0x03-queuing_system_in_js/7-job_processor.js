@@ -22,6 +22,7 @@ function sendNotification(phoneNumber, message, job, done) {
     return done();
   }
   
+  //  Setting up a handler function for processing jobs in the queue
   queue.process('push_notification_code_2', 2, (job, done) => {
     const { phoneNumber, message } = job.data;
     sendNotification(phoneNumber, message, job, done);
