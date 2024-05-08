@@ -4,10 +4,6 @@ const { Queue, Job } = kue;
 // Create a Kue queue instance
 const queue = kue.createQueue();
 
-// Uncomment the createQueue function if needed
-// function createQueue() {
-//     return kue.createQueue();
-// }
 
 // Define the createPushNotificationsJobs function
 function createPushNotificationsJobs(jobs, queue) {
